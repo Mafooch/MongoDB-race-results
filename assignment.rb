@@ -46,13 +46,13 @@ class Solution
     @coll.delete_many({})
   end
 
-  def load_collection(file_path)
+  def load_collection file_path
     collection = self.class.load_hash file_path
     @coll.insert_many collection
   end
 
-  def insert(race_result)
-    #place solution here
+  def insert race_result 
+    @coll.insert_one race_result
   end
 
   #
