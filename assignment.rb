@@ -86,7 +86,8 @@ class Solution
   end
 
   def find_by_letter(letter, offset, limit)
-    #place solution here
+    @coll.find(last_name: { :$regex => "^#{letter.upcase}.+" } )
+      .sort(last_name: 1).skip(offset).limit(limit)
   end
 
   #
